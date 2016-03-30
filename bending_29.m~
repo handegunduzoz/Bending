@@ -9,8 +9,8 @@ close all
 syms ri  
 
 %Known Values
-h = 10e-3;               %[mm] Thickness of the wafer
-F = xlsread('Force_all.xls','20micron'); %[N] Possible breaking loads
+h = 40e-3;               %[mm] Thickness of the wafer
+F = xlsread('Force_all.xls','40micron'); %[N] Possible breaking loads
 d = 20;                   %[mm] Cross section of wafer
 
 %Unknown Parameters
@@ -36,8 +36,8 @@ for i=1:n
 end
 
 fig = figure;
-plot(K,F,'LineWidth',2)
-%axis([0 20 0 3]);
+plot([F;K],'LineWidth',2)
+axis([0 3 0 20]);
 % Format the figure window by adding grid lines, figure title and legend.
 title('Radius of curvature vs Force')
 %legend('Radius of curvature','F', 'Location', 'South');
